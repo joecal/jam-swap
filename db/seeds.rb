@@ -8,7 +8,7 @@ categories = Category.create([{name:"meetups"},
                               {name:"jobs"}]);
 
 posts = Post.create([{title:"First post",description:"This is the first description in the first post.",category_id:1,user_id:1},
-                      {title:"Second post",desription:"This is the second description in the second post.",category_id:1,user_id:1},
+                      {title:"Second post",description:"This is the second description in the second post.",category_id:1,user_id:1},
                       {title:"Third post",description:"This is the third description in the third post.",category_id:2,user_id:2},
                       {title:"Fourth post",description:"This is the fourth description in the forth post.",category_id:2,user_id:2}]);
 
