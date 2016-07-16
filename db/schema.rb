@@ -23,8 +23,11 @@ ActiveRecord::Schema.define(version: 20160716043338) do
 
   create_table "comments", force: :cascade do |t|
     t.string   "comment"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "category_id"
+    t.integer  "post_id"
+    t.integer  "user_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "posts", force: :cascade do |t|
@@ -36,6 +39,8 @@ ActiveRecord::Schema.define(version: 20160716043338) do
     t.string   "city"
     t.string   "state"
     t.string   "picture_url"
+    t.integer  "category_id"
+    t.integer  "user_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
