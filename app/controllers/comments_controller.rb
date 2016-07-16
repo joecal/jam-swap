@@ -14,7 +14,8 @@ class CommentsController < ApplicationController
 
   # GET /comments/new
   def new
-    @comment = Comment.new
+    @post = Post.find(params[:post_id])
+    @comment = @post.comment.new
   end
 
   # GET /comments/1/edit
@@ -24,7 +25,11 @@ class CommentsController < ApplicationController
   # POST /comments
   # POST /comments.json
   def create
-    @comment = Comment.new(comment_params)
+    @post = Post.find(params[:post_id])
+    category_id = @post.category_id
+    @comment = @post.comments.new(comment_params)
+    @comment.category_id = category_id
+    @comment.save
 
     respond_to do |format|
       if @comment.save
@@ -35,6 +40,8 @@ class CommentsController < ApplicationController
         format.json { render json: @comment.errors, status: :unprocessable_entity }
       end
     end
+
+    redirect_to comments_path
   end
 
   # PATCH/PUT /comments/1
