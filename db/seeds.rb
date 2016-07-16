@@ -11,3 +11,6 @@ users = User.create([{email:"amyers0@pen.io"},
 {email:"mwilliamson2@slideshare.net"},
 {email:"hlittle3@ifeng.com"},
 {email:"shawkins4@opensource.org"}]);
+
+categories = Category.create([{name:"meetups"},
+                              {name:"jobs"}]);
