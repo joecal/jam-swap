@@ -1,5 +1,6 @@
-<p id="notice"><%= notice %></p>
-
+<%= javascript_include_tag "users" %>
+<div class="container" data-ng-app="users">
+<main data-ng-controller="user_controller as vm">
 <h1>Users</h1>
 
 <table>
@@ -11,17 +12,10 @@
   </thead>
 
   <tbody>
-    <% @users.each do |user| %>
-      <tr>
-        <td><%= user.email %></td>
-        <td><%= link_to 'Show', user %></td>
-        <td><%= link_to 'Edit', edit_user_path(user) %></td>
-        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <tr data-ng-repeat="user in vm.user_data">
+        <td>{{user.email}}</td>
       </tr>
-    <% end %>
   </tbody>
 </table>
-
-<br>
-
-<%= link_to 'New User', new_user_path %>
+</main>
+</div>
