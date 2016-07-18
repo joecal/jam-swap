@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  root to: 'sessions#new'
+  root to: redirect("/categories")
+  # root to: 'sessions#new'
 
   resources :comments
   resources :categories do

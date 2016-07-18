@@ -10,9 +10,10 @@
     "posts",
     "comments"
   ])
-  .config(["$stateProvider", RouterFunction]);
+  .config(["$stateProvider", "$locationProvider", RouterFunction]);
 
-    function RouterFunction($stateProvider){
+    function RouterFunction($stateProvider, $locationProvider){
+      $locationProvider.html5Mode(true);
       $stateProvider
       .state("userIndex", {
         url: "/users",
