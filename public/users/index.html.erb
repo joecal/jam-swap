@@ -12,4 +12,10 @@
         <td>{{user.email}}</td>
       </tr>
   </tbody>
+  <br/>
 </table>
+<br/>
+<form data-ng-submit="UserShowViewModel.create(UserShowViewModel.newUser)">
+  <input placeholder="New User" data-ng-model="UserShowViewModel.newUser.user" />
+  <button type="submit">Create</button>
+</form>

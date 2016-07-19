@@ -7,13 +7,18 @@
       <th colspan="3"></th>
     </tr>
   </thead>
+  <br/>
   <tbody>
       <tr data-ng-repeat="commentvm in vm.com_data">
         <td>{{commentvm.comment}}</td>
-        <td><a data-ui-sref="commentShow({id: commentvm.id})">Show</a></td>
-        <td><a data-ng-click="CommentShowViewModel.update(CommentShowViewModel.comment)">Edit</a></td>
-        <td><a data-ng-click="CommentShowViewModel.destroy(CommentShowViewModel.comment)">Delete</a></td>
+        <td><button data-ui-sref="commentShow({id: commentvm.id})">Show</button></td>
+        <td><button data-ng-click="CommentShowController.destroy(commentvm)">Delete</button></td>
       </tr>
   </tbody>
 </table>
+<br/>
+<form data-ng-submit="CategoryShowViewModel.create(CategoryShowViewModel.newCategory)">
+  <input placeholder="New Category" data-ng-model="CategoryShowViewModel.newCategory.category" />
+  <button type="submit">Create</button>
+</form>
 </main>

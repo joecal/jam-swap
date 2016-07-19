@@ -23,4 +23,8 @@
   </ul>
 </p>
 </div>
+<form data-ng-submit="UserShowViewModel.update(UserShowViewModel.user)">
+  <input placeholder="User Email" data-ng-model="UserShowViewModel.user.email" />
+  <button type="submit">Edit</button>
+</form>
 </html>
