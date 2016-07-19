@@ -26,7 +26,6 @@ class CategoriesController < ApplicationController
 
   def destroy
     Category.destroy(params[:id])
-    @category.save
     render json: {success: true}, status: :ok
   end
 

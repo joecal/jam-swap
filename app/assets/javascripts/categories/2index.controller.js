@@ -29,17 +29,17 @@
       });
     }
 
-    vm.create = function(new_category){
-      console.log(new_category)
-      Category.save(new_category, function(response){
-        console.log(new_category)
-        if(response.success) vm.cat_data.push(category_index);
-        console.log(vm.cat_data)
+    vm.category = new Category();
+    vm.create = function(){
+      vm.category.$save(function(response){
+        console.log(vm.category)
+        if(response.success) vm.cat_data.push();
       });
     }
 
     vm.update = function(category){
-      Category.update({id: category.id}, category, function(response){
+      console.log(category)
+      Category.update(function(response){
         console.log("Category updated!");
       });
     }

@@ -17,8 +17,8 @@
   </tbody>
 </table>
 <br/>
-  <form data-ng-submit="CategoryIndexViewModel.create(CategoryIndexViewModel.newCategory)">
-    <input placeholder="New Category" data-ng-model="CategoryIndexViewModel.newCategory.category" />
+  <form data-ng-submit="CategoryIndexViewModel.create()">
+    <input placeholder="New Category" data-ng-model="CategoryIndexViewModel.category.name" />
     <button type="submit">Create</button>
   </form>
 </main>
