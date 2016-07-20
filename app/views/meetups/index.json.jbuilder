@@ -1,4 +1,4 @@
-json.array!(@posts) do |post|
-  json.extract! post, :id, :title, :description, :email, :phone, :street, :city, :state, :picture_url
-  json.url post_url(post, format: :json)
+json.array!(@meetups) do |meetup|
+  json.extract! meetup, :id, :title, :description, :url
+  json.url meetup_url(meetup, format: :json)
 end

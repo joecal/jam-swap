@@ -5,8 +5,7 @@
   .module("jamswap", [
     "ui.router",
     "ngResource",
-    "categories",
-    "posts",
+    "homes",
     "jobs",
     "meetups"
   ])
@@ -15,29 +14,17 @@
     function RouterFunction($stateProvider, $locationProvider){
       $locationProvider.html5Mode(true);
       $stateProvider
-      .state("categoryIndex", {
-        url: "/categories",
-        templateUrl: "categories/index.html.erb",
-        controller: "category_controller",
-        controllerAs: "CategoryIndexViewModel"
+      .state("homeIndex", {
+        url: "/homes",
+        templateUrl: "homes/index.html.erb",
+        controller: "home_controller",
+        controllerAs: "HomeIndexViewModel"
       })
-      .state("categoryShow", {
-        url: "/categories/:id",
-        templateUrl: "categories/show.html.erb",
-        controller: "CategoryShowController",
-        controllerAs: "CategoryShowViewModel"
-      })
-      .state("postIndex", {
-        url: "/posts",
-        templateUrl: "posts/index.html.erb",
-        controller: "post_controller",
-        controllerAs: "PostIndexViewModel"
-      })
-      .state("postShow", {
-        url: "/posts/:id",
-        templateUrl: "posts/show.html.erb",
-        controller: "PostShowController",
-        controllerAs: "PostShowViewModel"
+      .state("homeShow", {
+        url: "/homes/:id",
+        templateUrl: "homes/show.html.erb",
+        controller: "HomeShowController",
+        controllerAs: "HomeShowViewModel"
       })
       .state("jobIndex", {
         url: "/jobs",

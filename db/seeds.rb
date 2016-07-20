@@ -1,8 +1,8 @@
-Category.destroy_all
+Home.destroy_all
 Job.destroy_all
 Meetup.destroy_all
 
-Category.create([{name:"meetups"},
+Home.create([{name:"meetups"},
 {name:"jobs"}]);
 
 Job.create([{title:"Ruby on Rails Developer",description:"Are you looking for a great opportunity where you can showcase your skills and talents? We are seeking a talented Ruby on Rails developer to join our Solution Street team! We are a company comprised of software developers and the partners of Solution Street are developers too! Our team is rapidly growing and now is the time to join us during this exciting adventure! We offer consulting services throughout the Northern Virginia/Washington, DC area and our home office is located in Herndon, Virginia."},

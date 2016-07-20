@@ -4,13 +4,6 @@
   <thead>
     <tr>
       <th>Title</th>
-      <th>Description</th>
-      <th>Email</th>
-      <th>Phone</th>
-      <th>Street</th>
-      <th>City</th>
-      <th>State</th>
-      <th>Picture url</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -18,22 +11,17 @@
   <tbody>
     <tr>
       <tr data-ng-repeat="jobvm in vm.job_data">
-        <td>{{jobvm.title}}</td>
-        <td>{{jobvm.description}}</td>
-        <td>{{jobvm.email}}</td>
-        <td>{{jobvm.phone}}</td>
-        <td>{{jobvm.street}}</td>
-        <td>{{jobvm.city}}</td>
-        <td>{{jobvm.state}}</td>
-        <td>{{jobvm.picture_url}}</td>
-        <td><button data-ui-sref="jobShow({id: jobvm.id})">Show</button></td>
+        <td><a data-ui-sref="jobShow({id: jobvm.id})">{{jobvm.title}}</a></td>
         <td><button data-ng-click="JobIndexViewModel.destroy(jobvm)">Delete</button></td>
       </tr>
   </tbody>
 </table>
 <br/>
+<h3>Add A New Job</h3>
 <form data-ng-submit="JobIndexViewModel.create()">
-  <input placeholder="New Job" data-ng-model="JobIndexViewModel.job.title" />
+  <input placeholder="Job Title" data-ng-model="JobIndexViewModel.job.title" />
+  <input placeholder="Job Description" data-ng-model="JobIndexViewModel.job.description" />
+  <input placeholder="Job Posting URL" data-ng-model="JobIndexViewModel.job.url" />
   <button type="submit">Create</button>
 </form>
 </main>
