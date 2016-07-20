@@ -1,0 +1,39 @@
+<main data-ng-controller="job_controller as vm">
+<h1>Jobs</h1>
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Email</th>
+      <th>Phone</th>
+      <th>Street</th>
+      <th>City</th>
+      <th>State</th>
+      <th>Picture url</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+  <br/>
+  <tbody>
+    <tr>
+      <tr data-ng-repeat="jobvm in vm.job_data">
+        <td>{{jobvm.title}}</td>
+        <td>{{jobvm.description}}</td>
+        <td>{{jobvm.email}}</td>
+        <td>{{jobvm.phone}}</td>
+        <td>{{jobvm.street}}</td>
+        <td>{{jobvm.city}}</td>
+        <td>{{jobvm.state}}</td>
+        <td>{{jobvm.picture_url}}</td>
+        <td><button data-ui-sref="jobShow({id: jobvm.id})">Show</button></td>
+        <td><button data-ng-click="JobIndexViewModel.destroy(jobvm)">Delete</button></td>
+      </tr>
+  </tbody>
+</table>
+<br/>
+<form data-ng-submit="JobIndexViewModel.create()">
+  <input placeholder="New Job" data-ng-model="JobIndexViewModel.job.title" />
+  <button type="submit">Create</button>
+</form>
+</main>

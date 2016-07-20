@@ -1,10 +1,21 @@
-<main data-ng-controller="category_controller as vm">
-<tr data-ng-repeat="categoryvm in vm.cat_data">
-  <strong>Name:</strong>
-  <a data-ui-sref="categoryShow({id: categoryvm.id})">{{categoryvm.name}}</a>
-</tr>
-<form data-ng-submit="CategoryIndexViewModel.update()">
-  <input placeholder="Category Name" data-ng-model="CategoryIndexViewModel.category.name" />
-  <button type="submit">Edit</button>
+<main data-ng-controller="post_controller as vm">
+<h1>Posts</h1>
+<br/>
+<h3>Description</h3>
+  <div data-ng-repeat="postvm in vm.post_data">
+    <h4><a data-ui-sref="postShow({id: postvm.id})">{{postvm.title}}</a></h4>
+  </div>
+<br/>
+<h4>New Post</h4>
+<form data-ng-submit="PostIndexViewModel.create()">
+  <input placeholder="Title" data-ng-model="PostIndexViewModel.post.title" />
+  <input placeholder="Description" data-ng-model="PostIndexViewModel.post.description" />
+  <input placeholder="Email" data-ng-model="PostIndexViewModel.post.email" />
+  <input placeholder="Phone" data-ng-model="PostIndexViewModel.post.phone" />
+  <input placeholder="Street" data-ng-model="PostIndexViewModel.post.street" />
+  <input placeholder="City" data-ng-model="PostIndexViewModel.post.city" />
+  <input placeholder="State" data-ng-model="PostIndexViewModel.post.state" />
+  <input placeholder="Picture Url" data-ng-model="PostIndexViewModel.post.picture_url" />
+  <button type="submit">Create</button>
 </form>
 </main>

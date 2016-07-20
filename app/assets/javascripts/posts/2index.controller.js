@@ -19,16 +19,16 @@
 
     vm.destroy = function(post_index){
       var post = vm.post_data[post_index];
-      Post.remove({id: post.id}, function(response){
+      Post.remove(post_index, function(response){
         if(response.success) vm.post_data.splice(post_index, 1);
       });
     }
 
-    vm.new_post = {};
+    vm.post = new Post();
     vm.create = function(){
-      Post.save(vm.new_post, function(response){
-        vm.post_data.push(response);
-        vm.new_post = {};
+      vm.post.$save(function(response){
+        console.log(vm.post)
+        if(response.success) vm.post_data.push();
       });
     }
 
