@@ -1,14 +1,14 @@
-<p>
-  <strong>Title:</strong>
-  <p>{{MeetupShowViewModel.meetup.title}}</p>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <p>{{MeetupShowViewModel.meetup.description}}</p>
-</p>
-
-<p>
-  <strong>Url:</strong>
-  <p>{{MeetupShowViewModel.meetup.url}}</p>
-</p>
+<main data-ng-controller="meetup_controller as vm">
+<div class="panel panel-default">
+  <div class="panel-heading"><strong>{{MeetupShowViewModel.meetup.title}}</strong>
+    <p class="pull-right">{{MeetupShowViewModel.meetup.created_at | date:'mediumDate'}}</p>
+  </div>
+  <div class="panel-body">
+    <p>
+      <strong>Description:</strong>
+      <p>{{MeetupShowViewModel.meetup.description}}</p>
+    </p>
+  </div>
+  <div class="panel-footer"><strong>Url:</strong><p>{{MeetupShowViewModel.meetup.url}}</p></div>
+</div>
+</main>

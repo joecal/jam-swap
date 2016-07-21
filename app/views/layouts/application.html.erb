@@ -3,6 +3,7 @@
   <head>
     <title>JamSwap</title>
     <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => "reload" %>
     <link rel="stylesheet" href="https://bootswatch.com/spacelab/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.min.js"></script>
@@ -11,7 +12,7 @@
     <%= javascript_include_tag "application" %>
   </head>
   <body>
-    <nav class="navbar navbar-default">
+  <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -20,7 +21,8 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" data-ui-sref="homeIndex">JamSwap</a>
+      <img class="navbar-brand"><a data-ui-sref="homeIndex"><%= image_tag "gaHamburger.png" %></a></img>
+
     </div>
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">

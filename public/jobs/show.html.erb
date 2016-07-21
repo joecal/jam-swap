@@ -1,8 +1,7 @@
 <main data-ng-controller="job_controller as vm">
-
-<div class="panel panel-default" data-ng-repeat="jobvm in vm.job_data">
+<div class="panel panel-default">
   <div class="panel-heading"><strong>{{JobShowViewModel.job.title}}</strong>
-    <p data-ui-sref="jobShow({id: jobvm.id})">{{jobvm.created_at | date:'mediumDate'}}</p>
+    <p class="pull-right">{{JobShowViewModel.job.created_at | date:'mediumDate'}}</p>
   </div>
   <div class="panel-body">
     <p>
