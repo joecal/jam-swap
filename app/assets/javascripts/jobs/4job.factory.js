@@ -9,7 +9,7 @@
   ]);
 
   function JobFactoryFunction($resource) {
-    return $resource("http://localhost:3000/jobs/:id.json", {}, {
+    return $resource("https://localhost:3000/jobs/:id.json", {}, {
       update: {method: "PUT"}
     });
   }
