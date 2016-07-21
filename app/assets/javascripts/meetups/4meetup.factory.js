@@ -9,7 +9,7 @@
   ]);
 
   function MeetupFactoryFunction($resource) {
-    return $resource("https://localhost:3000/meetups/:id.json", {}, {
+    return $resource("http://localhost:3000/meetups/:id.json", {}, {
       update: {method: "PUT"}
     });
   }
