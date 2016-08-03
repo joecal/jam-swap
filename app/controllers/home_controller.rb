@@ -1,4 +1,5 @@
 class HomeController < ApplicationController
+  # AM: Nice!
   before_action :set_home, only: [:show, :edit, :update]
 
   def index
